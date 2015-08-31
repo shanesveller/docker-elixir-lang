@@ -2,11 +2,11 @@
 
 At the time of writing, this Dockerfile results in an image with:
 
-* Debian 7 (Wheezy)
+* Ubuntu 14.04.3 (Trusty)
 * Erlang Solutions APT repository
-* Erlang/OTP v17.5.3
-* Elixir v1.0.4
-* Hex v0.8.0
+* Erlang/OTP v18.0
+* Elixir v1.0.5
+* Hex v0.8.3
 * Rebar 2.3.1
 
 ## Checking Versions

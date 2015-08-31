@@ -1,24 +1,21 @@
-FROM debian:7
+FROM ubuntu:14.04.3
 
 MAINTAINER Shane Sveller <shane@shanesveller.com>
 
-ADD locale.gen /etc/locale.gen
-RUN apt-get update -qq && \
-    apt-get -y install locales && \
-    apt-get clean -y && \
-    rm -rf /var/cache/apt/* && \
-    locale-gen
-ENV LANG en_US.UTF-8
-
-RUN apt-get update -q && \
-    apt-get -y install curl && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -q && \
+    apt-get -y install curl locales && \
+    locale-gen "en_US.UTF-8" && \
+    export LANG=en_US.UTF-8 && \
     curl -o /tmp/erlang.deb http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && \
-    DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/erlang.deb && \
+    dpkg -i /tmp/erlang.deb && \
     rm -rf /tmp/erlang.deb && \
     apt-get update -q && \
-    apt-get install -y elixir && \
+    apt-get install -y erlang-base=1:18.0 elixir=1.0.5-2 && \
     apt-get clean -y && \
     rm -rf /var/cache/apt/*
+
+ENV LANG=en_US.UTF-8
 
 RUN mix local.hex --force && \
     mix local.rebar --force
