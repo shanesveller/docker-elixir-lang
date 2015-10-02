@@ -4,9 +4,9 @@ At the time of writing, this Dockerfile results in an image with:
 
 * Ubuntu 14.04.3 (Trusty)
 * Erlang Solutions APT repository
-* Erlang/OTP v18.0
-* Elixir v1.0.5
-* Hex v0.8.3
+* Erlang/OTP v18.1
+* Elixir v1.1.0
+* Hex v0.9.0
 * Rebar 2.3.1
 
 ## Checking Versions
