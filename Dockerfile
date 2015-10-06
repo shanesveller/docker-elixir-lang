@@ -11,7 +11,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     dpkg -i /tmp/erlang.deb && \
     rm -rf /tmp/erlang.deb && \
     apt-get update -q && \
-    apt-get install -y erlang-base=1:18.1 erlang-dev=1:18.1 erlang-xmerl=1:18.1 elixir=1.1.0-1 && \
+    apt-get install -y erlang-base=1:18.1 erlang-dev=1:18.1 erlang-eunit=1:18.1 erlang-xmerl=1:18.1 elixir=1.1.0-1 && \
     apt-get clean -y && \
     rm -rf /var/cache/apt/*
 
