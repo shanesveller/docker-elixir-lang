@@ -18,7 +18,7 @@ RUN apk-install \
     gcc \
     make
 
-RUN wget -O /tmp/elixir.zip https://github.com/elixir-lang/elixir/releases/download/v1.2.1/Precompiled.zip && \
+RUN wget -O /tmp/elixir.zip https://github.com/elixir-lang/elixir/releases/download/v1.2.3/Precompiled.zip && \
     mkdir -p /opt/elixir && \
     unzip -d /opt/elixir /tmp/elixir.zip && \
     rm -f /tmp/elixir.zip
