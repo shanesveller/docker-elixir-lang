@@ -2,19 +2,19 @@
 
 At the time of writing, this Dockerfile results in an image with:
 
-* Ubuntu 14.04.3 (Trusty)
-* Erlang Solutions APT repository
+* Alpine Linux 3.3
 * Erlang/OTP v18.1
-* Elixir v1.1.0
-* Hex v0.9.0
-* Rebar 2.3.1
+* Elixir v1.2.3
+* Hex v0.10.4
+* Rebar 3.0.0-beta-2
 
 ## Checking Versions
 
 Want to check the current versions included in the latest image in light of future rebuilds?
 
-* `docker run -it --rm shanesveller/elixir-lang apt-cache policy erlang-base elixir`
-* `docker run -it --rm shanesveller/elixir-lang mix hex`
+* `docker run -it --rm shanesveller/elixir-lang apk info erlang`
+* `docker run -it --rm shanesveller/elixir-lang elixir -v`
+* `docker run -it --rm shanesveller/elixir-lang mix hex.info`
 * `docker run -it --rm shanesveller/elixir-lang ~/.mix/rebar -V`
 
 # Caveats
